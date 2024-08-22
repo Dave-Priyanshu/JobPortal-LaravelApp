@@ -7,17 +7,18 @@ use Illuminate\Http\Request;
 class ListingController extends Controller
 {
     // To show all listings
-    public function index()
-    {
-        return view('listing.index', [
-            'listings' => Listing::all()
+    public function index(Request $request)
+    {   
+        // dd(request());
+        return view('listings.index', [
+            'listings' => Listing::latest()->filter(request(['tag']))->get()
         ]);
     }
 
     // Show a single listing
     public function show(Listing $listing)
     {
-        return view('listing.show', [
+        return view('listings.show', [
             'listing' => $listing
         ]);
     }
