@@ -11,8 +11,14 @@ Route::get('/', function () {
 });
 
 //Single listing
-Route::get('/singleListing/{id}',function($id){
+Route::get('/singleListing/{listing}',function(Listing $listing){
+    // $listing = Listing::find($id);
     return view('listing',[
-        'listing' => Listing::find($id)
+        'listing' => $listing
     ]);
+    
 });
+
+Route::get('/pagenotfound', function () {
+    return view('pagenotfound');
+})->name('pagenotfound');

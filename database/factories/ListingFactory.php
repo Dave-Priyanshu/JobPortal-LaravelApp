@@ -21,7 +21,7 @@ class ListingFactory extends Factory
             'tags' => 'laravel, api, backend',
             'company' => $this->faker->company(),
             'email' => $this->faker->companyEmail(),
-            'website' => $this->faker->url(),
+            'website' => 'https://github.com/Dave-Priyanshu',
             'location' => $this->faker->city(),
             'description' => $this->faker->paragraph(5),
         ];
