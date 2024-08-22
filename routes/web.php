@@ -11,6 +11,6 @@ Route::get('/', [ListingController::class, 'index']);
 //Single listing
 Route::get('/singleListing/{listing}',[ListingController::class, 'show']);
 
-Route::get('/pagenotfound', function () {
-    return view('pagenotfound');
-})->name('pagenotfound');
+//show create job form
+
+Route::get('/listings/create',[ListingController::class, 'create']);
