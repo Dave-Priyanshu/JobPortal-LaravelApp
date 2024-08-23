@@ -36,6 +36,7 @@
                                 placeholder="Enter company name"
                                 aria-label="Company Name"
                                 autofocus
+                                value="{{old('company')}}"
                             />
                             <i class="fa fa-building absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -55,6 +56,7 @@
                                 name="title"
                                 placeholder="Example: Senior Laravel Developer"
                                 aria-label="Job Title"
+                                value="{{old('title')}}"
                             />
                             <i class="fa fa-briefcase absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -73,6 +75,7 @@
                                 name="location"
                                 placeholder="Example: Remote, Boston MA, etc"
                                 aria-label="Job Location" 
+                                value="{{old('location')}}"
                             />
                             <i class="fa fa-map-marker-alt absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -92,6 +95,7 @@
                                 name="email"
                                 placeholder="Enter contact email"
                                 aria-label="Contact Email"
+                                value="{{old('email')}}"
                             />
                             <i class="fa fa-envelope absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -111,6 +115,7 @@
                                 name="website"
                                 placeholder="Example: https://companywebsite.com"
                                 aria-label="Website URL"
+                                value="{{old('website')}}"
                             />
                             <i class="fa fa-globe absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -130,6 +135,7 @@
                                 name="tags"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
                                 aria-label="Tags"
+                                value="{{old('tags')}}"
                             />
                             <i class="fa fa-tags absolute top-4 left-3 text-gray-500"></i>
                         </div>
@@ -148,6 +154,7 @@
                                 class="border border-gray-300 rounded-lg p-3 w-full focus:outline-none transition duration-300"
                                 name="logo"
                                 aria-label="Company Logo"
+                                value="{{old('logo')}}"
                             />
                         </div> 
                         @error('logo')
@@ -166,6 +173,7 @@
                                 rows="8"
                                 placeholder="Include tasks, requirements, salary, etc"
                                 aria-label="Job Description"
+                                {{old('description')}}
                             ></textarea>
                             <div id="char-count" class="text-gray-500 text-sm mt-1">0/500 characters</div>
                         </div>
