@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -62,7 +63,7 @@ window.addEventListener("scroll", function() {
         </main>
     
         <footer
-    class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold text-white h-24 mt-24 opacity-90 md:justify-center"
+    class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold text-white h-16 mt-24 opacity-90 md:justify-center"
     style="background: linear-gradient(to right, #ef3b2d, #000000);"
 >
     <p class="ml-1">Copyright &copy; 2024, All Rights reserved</p>
@@ -72,7 +73,7 @@ window.addEventListener("scroll", function() {
         class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
         >Post Job</a
     >
-    <div class="absolute bottom-2 left-10 flex space-x-4 text-2xl">
+    <div class="absolute bottom-3 left-10 flex space-x-4 text-2xl">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin-in"></i></a>

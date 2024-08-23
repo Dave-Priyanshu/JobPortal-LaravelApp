@@ -10,6 +10,9 @@ class Listing extends Model
 {
     use HasFactory;
 
+    // one way it this.another way is to change the AppServiceProvider.php file
+    protected $fillable =['title','company','location','email','description','tags','website'];
+
     public function scopeFilter($query, array $filters){
         if($filters['tag'] ?? false){
             $query->where('tags','like','%'.request('tag').'%');

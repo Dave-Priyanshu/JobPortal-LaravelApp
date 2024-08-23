@@ -12,120 +12,168 @@
 
                 <!-- Progress Bar -->
                 <div class="relative mb-6">
-                    <!-- Progress Bar Container -->
                     <div class="relative h-5 bg-gray-200 rounded-full overflow-hidden">
-                        <!-- Progress Bar Fill -->
                         <div id="progress-bar" class="h-full bg-laravel transition-all duration-500 ease-in-out rounded-full"></div>
-                
-                        <!-- Percentage Labels -->
                         <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-semibold text-gray-800">
                             <span class="flex-shrink-0">0%</span>
                             <span class="flex-shrink-0">100%</span>
                         </div>
                     </div>
                 </div>
-                
 
-                <form id="job-form" action="" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form id="job-form" action="/listings" method="POST" enctype="multipart/form-data" class="space-y-6">
                     @csrf
-                    <!-- Form Fields -->
-                    <div class="relative">
-                        <input
-                            type="text"
-                            id="company"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="company"
-                            placeholder="Enter company name"
-                            required
-                            aria-label="Company Name"
-                        />
-                        <i class="fa fa-building absolute top-4 left-3 text-gray-500"></i>
+
+                    <!-- Form Fields with Validation Feedback -->
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Company Name:</label>
+                        <div class="relative">
+                            <input
+                                type="text"
+                                id="company"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="company"
+                                placeholder="Enter company name"
+                                aria-label="Company Name"
+                                autofocus
+                            />
+                            <i class="fa fa-building absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('company')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
+                    </div>
+                    
+                    {{-- Job Title --}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Job Title:</label>
+                        <div class="relative">
+                            <input
+                                type="text"
+                                id="title"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="title"
+                                placeholder="Example: Senior Laravel Developer"
+                                aria-label="Job Title"
+                            />
+                            <i class="fa fa-briefcase absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('title')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
+                    </div>
+                    {{-- Job Location --}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Job Location:</label>
+                        <div class="relative">
+                            <input
+                                type="text"
+                                id="location"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="location"
+                                placeholder="Example: Remote, Boston MA, etc"
+                                aria-label="Job Location" 
+                            />
+                            <i class="fa fa-map-marker-alt absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('location')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
                     </div>
 
-                    <div class="relative">
-                        <input
-                            type="text"
-                            id="title"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="title"
-                            placeholder="Example: Senior Laravel Developer"
-                            required
-                            aria-label="Job Title"
-                        />
-                        <i class="fa fa-briefcase absolute top-4 left-3 text-gray-500"></i>
+                    {{-- Contact Email --}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Contact Email:</label>
+                        <div class="relative">
+                            <input
+                                type="email"
+                                id="email"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="email"
+                                placeholder="Enter contact email"
+                                aria-label="Contact Email"
+                            />
+                            <i class="fa fa-envelope absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('email')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
                     </div>
 
-                    <div class="relative">
-                        <input
-                            type="text"
-                            id="location"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="location"
-                            placeholder="Example: Remote, Boston MA, etc"
-                            required
-                            aria-label="Job Location"
-                        />
-                        <i class="fa fa-map-marker-alt absolute top-4 left-3 text-gray-500"></i>
+                    {{-- Website URL --}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Website URL:</label>
+                        <div class="relative">
+                            <input
+                                type="url"
+                                id="website"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="website"
+                                placeholder="Example: https://companywebsite.com"
+                                aria-label="Website URL"
+                            />
+                            <i class="fa fa-globe absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('website')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
                     </div>
 
-                    <div class="relative">
-                        <input
-                            type="email"
-                            id="email"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="email"
-                            placeholder="Enter contact email"
-                            required
-                            aria-label="Contact Email"
-                        />
-                        <i class="fa fa-envelope absolute top-4 left-3 text-gray-500"></i>
+                    {{-- Job Tags --}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Tags</label>
+                        <div class="relative">
+                            <input
+                                type="text"
+                                id="tags"
+                                class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="tags"
+                                placeholder="Example: Laravel, Backend, Postgres, etc"
+                                aria-label="Tags"
+                            />
+                            <i class="fa fa-tags absolute top-4 left-3 text-gray-500"></i>
+                        </div>
+                        @error('tags')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
                     </div>
 
-                    <div class="relative">
-                        <input
-                            type="url"
-                            id="website"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="website"
-                            placeholder="Example: https://companywebsite.com"
-                            aria-label="Website URL"
-                        />
-                        <i class="fa fa-globe absolute top-4 left-3 text-gray-500"></i>
+                    {{-- Company Logo
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Company Logo</label>
+                        {{-- <div class="relative">
+                            <input
+                                type="file"
+                                id="logo"
+                                class="border border-gray-300 rounded-lg p-3 w-full focus:outline-none transition duration-300"
+                                name="logo"
+                                aria-label="Company Logo"
+                            />
+                        </div> 
+                        @error('logo')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
+                    </div> --}}
+
+                    {{-- Job Description--}}
+                    <div class="mb-4">
+                        <label for="company" class="block text-gray-700 font-semibold mb-2">Job Description</label>
+                        <div class="relative">
+                            <textarea
+                                id="description"
+                                class="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
+                                name="description"
+                                rows="8"
+                                placeholder="Include tasks, requirements, salary, etc"
+                                aria-label="Job Description"
+                            ></textarea>
+                            <div id="char-count" class="text-gray-500 text-sm mt-1">0/500 characters</div>
+                        </div>
+                        @error('description')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        @enderror
                     </div>
 
-                    <div class="relative">
-                        <input
-                            type="text"
-                            id="tags"
-                            class="border border-gray-300 rounded-lg p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="tags"
-                            placeholder="Example: Laravel, Backend, Postgres, etc"
-                            aria-label="Tags"
-                        />
-                        <i class="fa fa-tags absolute top-4 left-3 text-gray-500"></i>
-                    </div>
-
-                    <div class="relative">
-                        <input
-                            type="file"
-                            id="logo"
-                            class="border border-gray-300 rounded-lg p-3 w-full focus:outline-none transition duration-300"
-                            name="logo"
-                            aria-label="Company Logo"
-                        />
-                    </div>
-
-                    <div class="relative">
-                        <textarea
-                            id="description"
-                            class="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-laravel transition duration-300"
-                            name="description"
-                            rows="8"
-                            placeholder="Include tasks, requirements, salary, etc"
-                            aria-label="Job Description"
-                            required
-                        ></textarea>
-                    </div>
 
                     <div class="flex items-center justify-between space-x-4">
                         <button
@@ -159,6 +207,7 @@
     </div>
 
     <script>
+        
         // Function to update progress bar
         function updateProgressBar() {
             const formFields = document.querySelectorAll('#job-form input, #job-form textarea');
@@ -179,11 +228,21 @@
             document.getElementById('preview-description').textContent = document.getElementById('description').value || '-';
         }
 
+        // Function to update character count
+        function updateCharCount() {
+            const description = document.getElementById('description');
+            const charCount = document.getElementById('char-count');
+            charCount.textContent = `${description.value.length}/500 characters`;
+        }
+
         // Add event listeners to inputs and textarea
         document.querySelectorAll('#job-form input, #job-form textarea').forEach(field => {
             field.addEventListener('input', () => {
                 updateProgressBar();
                 updatePreview();
+                if (field.id === 'description') {
+                    updateCharCount();
+                }
             });
         });
 
