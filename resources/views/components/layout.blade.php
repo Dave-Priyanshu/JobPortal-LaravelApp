@@ -80,9 +80,9 @@ window.addEventListener("scroll", function() {
         >Post Job</a
     >
     <div class="absolute bottom-3 left-10 flex space-x-4 text-2xl">
-        <a href="#"><i class="fab fa-facebook-f fill-inherit"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Dave-Priyanshu"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-regular fa-envelope"></i></i></a>
     </div>
     
     
