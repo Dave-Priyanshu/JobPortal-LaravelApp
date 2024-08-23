@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="bg-gray-100 border border-gray-300 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-12">
+    <div class="bg-gray-200 border border-gray-300 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-12">
         <div class="flex flex-wrap lg:flex-nowrap">
             <!-- Form -->
             <div class="flex-1 lg:mr-8">
@@ -12,9 +12,9 @@
 
                 <!-- Progress Bar -->
                 <div class="relative mb-6">
-                    <div class="relative h-5 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="relative h-5 bg-gray-300 rounded-full overflow-hidden">
                         <div id="progress-bar" class="h-full bg-laravel transition-all duration-500 ease-in-out rounded-full"></div>
-                        <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-semibold text-gray-800">
+                        <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-semibold text-white">
                             <span class="flex-shrink-0">0%</span>
                             <span class="flex-shrink-0">100%</span>
                         </div>
@@ -144,10 +144,10 @@
                         @enderror
                     </div>
 
-                    {{-- Company Logo
+                    {{-- Company Logo --}}
                     <div class="mb-4">
                         <label for="company" class="block text-gray-700 font-semibold mb-2">Company Logo</label>
-                        {{-- <div class="relative">
+                        <div class="relative">
                             <input
                                 type="file"
                                 id="logo"
@@ -160,7 +160,7 @@
                         @error('logo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
-                    </div> --}}
+                    </div>
 
                     {{-- Job Description--}}
                     <div class="mb-4">
@@ -186,19 +186,19 @@
                     <div class="flex items-center justify-between space-x-4">
                         <button
                             type="submit"
-                            class="bg-laravel text-white rounded-lg py-3 px-6 hover:bg-black transition duration-300 flex items-center"
+                            class="bg-laravel text-white rounded-lg py-3 px-6 hover:bg-red-700 transition duration-300 flex items-center"
                         >
                             <i class="fa fa-plus mr-2"></i> Create Job
                         </button>
 
-                        <a href="/" class="text-gray-700 hover:text-gray-900 transition duration-300">Back</a>
+                        <a href="/" class="text-gray-700 hover:text-red-700 transition duration-300">Back</a>
                     </div>
                 </form>
             </div>
 
             <!-- Preview Section -->
-            <div class="w-full lg:w-1/3 mt-8 lg:mt-0">
-                <div id="preview" class="bg-white border border-gray-300 p-6 rounded-lg shadow-md">
+            {{-- <div class="w-full lg:w-1/3 mt-8 lg:mt-0"> --}}
+                {{-- <div id="preview" class="bg-white border border-gray-300 p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Job Listing Preview</h3>
                     <div class="text-gray-600 space-y-2">
                         <p><strong class="text-gray-800">Company Name:</strong> <span id="preview-company" class="text-gray-700">-</span></p>
@@ -212,7 +212,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <script>
         

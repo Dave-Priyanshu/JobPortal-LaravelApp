@@ -20,7 +20,12 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#ef3b2d",
+                            // laravel: "#803D3B",
+                            laravel: "#952323",
+                            // background: '#E4C59E',
+                            background: '#FFFFFFFF',
+                            // Secondbackground: '#EEEBDD',
+                            fontCol: '#322C2B'
                         },
                     },
                 },
@@ -28,19 +33,19 @@
         </script>
         <title>JobPortal | Find Laravel Jobs & Projects</title>
     </head>
-    <body class="mb-48">
+    <body class="mb-48 bg-background">
         <nav class="flex justify-between items-center">
             <a href="/"
                 ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
+                    <a href="register.html" class="text-fontCol hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="login.html" class="hover:text-laravel"
+                    <a href="login.html" class="text-fontCol hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >
@@ -65,7 +70,7 @@ window.addEventListener("scroll", function() {
     
         <footer
     class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold text-white h-16 mt-24 opacity-90 md:justify-center"
-    style="background: linear-gradient(to right, #ef3b2d, #000000);"
+    style="background: linear-gradient(to right,#000000, #ef3b2d );"
 >
     <p class="ml-1">Copyright &copy; 2024, All Rights reserved</p>
 
@@ -75,7 +80,7 @@ window.addEventListener("scroll", function() {
         >Post Job</a
     >
     <div class="absolute bottom-3 left-10 flex space-x-4 text-2xl">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-facebook-f fill-inherit"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
