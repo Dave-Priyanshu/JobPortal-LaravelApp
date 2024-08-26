@@ -64,7 +64,10 @@ class ListingController extends Controller
     //update
     public function update(Request $request, Listing $listing){
 
-        
+        //making sure that logged in user is the real owner
+        if($listing->user_id != auth()->id()){
+            abort(403,'Unauthorized Action');
+        }
 
         $formFields = $request->validate([
             'title'=> 'required',
@@ -85,6 +88,10 @@ class ListingController extends Controller
     }
 
     public function delete(Listing $listing){
+        //making sure that logged in user is the real owner
+        if($listing->user_id != auth()->id()){
+            abort(403,'Unauthorized Action');
+        }
         // dd($listing);
         $listing->delete();
         return redirect('/')->with('message','Job Deleted Successfully!');
