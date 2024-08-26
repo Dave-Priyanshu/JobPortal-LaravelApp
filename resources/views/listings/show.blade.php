@@ -5,6 +5,66 @@
     </a>
     <div class="mx-4">
         <x-card class="!p-10">
+           
+            {{-- Show the creator's name & email --}}
+            {{-- <div class="text-lg font-bold mb-4">
+                Posted by: {{ $listing->user ? $listing->user->name : 'Unknown' }} </br>
+                Contact Details: {{ $listing->user ? $listing->user->email : 'Unknown' }} 
+            </div> --}}
+
+
+            {{--! Final - Show the creator's name & email --}}
+            <style>
+                .tooltip {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            
+                .tooltip .tooltiptext {
+                    visibility: hidden;
+                    width: 150px;
+                    background-color: #333;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 90%; /* Position above the link */
+                    left: 100%;
+                    margin-left: -40px;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+            
+                .tooltip:hover .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            </style>
+            
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-6 border border-gray-300">
+                <div class="mb-4">
+                    <span class="bg-blue-500 text-white text-sm font-semibold py-1 px-3 rounded-full">
+                        Posted by
+                    </span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <i class="fa-solid fa-user text-gray-600 text-lg mr-2"></i>
+                    <h4 class="text-xl font-semibold text-gray-800">{{ $listing->user ? $listing->user->name : 'Unknown' }}</h4>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa-solid fa-envelope text-gray-600 text-lg mr-2"></i>
+                    <div class="tooltip">
+                        <a href="mailto:{{$listing->user ? $listing->user->email : 'Unknown' }}" class="text-md email-link">
+                            {{ $listing->user ? $listing->user->email : 'Unknown' }}
+                        </a>
+                        <div class="tooltiptext">Click to send an email</div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="flex flex-col items-center justify-center text-center">
                 <img
                     class="w-48 mr-6 mb-6"
