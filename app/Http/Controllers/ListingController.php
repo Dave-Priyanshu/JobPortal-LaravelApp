@@ -63,6 +63,9 @@ class ListingController extends Controller
 
     //update
     public function update(Request $request, Listing $listing){
+
+        
+
         $formFields = $request->validate([
             'title'=> 'required',
             'company'=> 'required',
@@ -85,5 +88,10 @@ class ListingController extends Controller
         // dd($listing);
         $listing->delete();
         return redirect('/')->with('message','Job Deleted Successfully!');
+    }
+
+    //Manage listings
+    public function manage(){
+        return view('listings.manage',['listings' => auth()->user()->listings()->get()]);
     }
 }

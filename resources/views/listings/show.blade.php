@@ -112,18 +112,19 @@
         </x-card>
 
         {{-- Edit form --}}
-        <x-card class="mt-4 p-2 flex space-x-6"> 
+        {{-- <x-card class="mt-4 p-2 flex space-x-6"> 
             <a href="/listings/{{$listing->id}}/edit">
             <i class="i fa-solid fa-pencil mr-1"></i>Edit
-            </a>
+            </a> --}}
 
             {{-- delete from --}}
-            <form method="POST" action="/listings/{{$listing->id}}">
+            {{-- <form method="POST" action="/listings/{{$listing->id}}">
             @csrf
             @method('DELETE')
-            <button class="text-red-500"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+            <button class="text-red-500"><i class="fa-solid fa-trash mr-1"></i>Delete</button> --}}
             {{-- <buttton class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</buttton> --}}
-            </form>
-        </x-card>
+            {{-- </form>
+        </x-card> --}}
     </div>
+    
 </x-layout>
