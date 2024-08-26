@@ -12,11 +12,11 @@
 
                 <!-- Progress Bar -->
                 <div class="relative mb-6">
-                    <div class="relative h-5 bg-gray-300 rounded-full overflow-hidden">
+                    <div class="relative h-5 bg-white rounded-full overflow-hidden">
                         <div id="progress-bar" class="h-full bg-laravel transition-all duration-500 ease-in-out rounded-full"></div>
                         <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-semibold text-white">
-                            <span class="flex-shrink-0">0%</span>
-                            <span class="flex-shrink-0">100%</span>
+                            <span class="text-black flex-shrink-0">0%</span>
+                            <span class="text-black flex-shrink-0">100%</span>
                         </div>
                     </div>
                 </div>

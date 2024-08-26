@@ -77,6 +77,7 @@ class ListingController extends Controller
     }
 
     public function delete(Listing $listing){
+        // dd($listing);
         $listing->delete();
         return redirect('/')->with('message','Job Deleted Successfully!');
     }

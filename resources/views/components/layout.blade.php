@@ -25,7 +25,9 @@
                             // background: '#E4C59E',
                             background: '#FFFFFFFF',
                             // Secondbackground: '#EEEBDD',
-                            fontCol: '#322C2B'
+                            fontCol: '#322C2B',
+                            white_color: '#FFF5EE'
+
                         },
                     },
                 },
@@ -33,19 +35,19 @@
         </script>
         <title>JobPortal | Find Laravel Jobs & Projects</title>
     </head>
-    <body class="mb-48 bg-background">
-        <nav class="flex justify-between items-center">
+    <body class="mb-48 bg-background ">
+        <nav class="flex justify-between items-center bg-white_color drop-shadow-xl">
             <a href="/"
                 ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
+            <ul class="flex space-x-6 mr-6 text-lg ">
                 <li>
-                    <a href="register.html" class="text-fontCol hover:text-laravel"
+                    <a href="/register" class="text-fontCol hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="login.html" class="text-fontCol hover:text-laravel"
+                    <a href="/login" class="text-fontCol hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >
@@ -82,7 +84,7 @@ window.addEventListener("scroll", function() {
     <div class="absolute bottom-3 left-10 flex space-x-4 text-2xl">
         <a href="https://github.com/Dave-Priyanshu"><i class="fa-brands fa-github"></i></a>
         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-regular fa-envelope"></i></i></a>
+        <a href="mailto:priyanshutest2001@gmail.com"><i class="fa-regular fa-envelope"></i></i></a>
     </div>
     
     
