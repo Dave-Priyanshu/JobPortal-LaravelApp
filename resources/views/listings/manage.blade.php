@@ -1,5 +1,8 @@
 <x-layout>
     <x-card class="p-12 bg-white shadow-lg rounded-lg">
+        <a href="/jobs" class="inline-block text-black ml-4 mb-4">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
         <header class="bg-gray-100 p-6 rounded-md">
             <h1 class="text-4xl text-center font-bold my-4 uppercase text-blue-600">
                 Manage Posts
@@ -29,7 +32,7 @@
                     <td class="px-4 py-4 text-lg text-gray-800">
                         <a href="show.html" class="font-semibold hover:text-blue-500">
                             {{$listing->title}}
-                        </a>
+                        </a> 
                     </td>
                     <td class="px-4 py-4 text-center">
                         <a href="/listings/{{$listing->id}}/edit" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">

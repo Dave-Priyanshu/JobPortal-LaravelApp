@@ -52,7 +52,7 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
-        return redirect('/')->with('message','Listing created successfully!');
+        return redirect('/jobs')->with('message','Listing created successfully!');
     }
 
     // show edit form
@@ -84,7 +84,7 @@ class ListingController extends Controller
         }
         $listing->update($formFields);
 
-        return redirect('/')->with('message','Listing Updated successfully!');
+        return redirect('/jobs')->with('message','Listing Updated successfully!');
     }
 
     public function delete(Listing $listing){
@@ -94,7 +94,7 @@ class ListingController extends Controller
         }
         // dd($listing);
         $listing->delete();
-        return redirect('/')->with('message','Job Deleted Successfully!');
+        return redirect('/jobs')->with('message','Job Deleted Successfully!');
     }
 
     //Manage listings

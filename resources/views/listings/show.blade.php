@@ -1,26 +1,18 @@
 <x-layout>
     @include('partials._search')
-    <a href="/" class="inline-block text-black ml-4 mb-4">
+    <a href="/jobs" class="inline-block text-black ml-4 mb-4">
         <i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
         <x-card class="!p-10">
-           
-            {{-- Show the creator's name & email --}}
-            {{-- <div class="text-lg font-bold mb-4">
-                Posted by: {{ $listing->user ? $listing->user->name : 'Unknown' }} </br>
-                Contact Details: {{ $listing->user ? $listing->user->email : 'Unknown' }} 
-            </div> --}}
-
-
-            {{--! Final - Show the creator's name & email --}}
+            {{-- Final - Show the creator's name & email --}}
             <style>
                 .tooltip {
                     position: relative;
                     display: inline-block;
                     cursor: pointer;
                 }
-            
+
                 .tooltip .tooltiptext {
                     visibility: hidden;
                     width: 150px;
@@ -37,13 +29,34 @@
                     opacity: 0;
                     transition: opacity 0.3s;
                 }
-            
+
                 .tooltip:hover .tooltiptext {
                     visibility: visible;
                     opacity: 1;
                 }
+
+                .subscribe-form {
+                    margin-top: 1.5rem;
+                    padding: 1rem;
+                    background-color: #f9f9f9;
+                    border-radius: 8px;
+                    border: 1px solid #ddd;
+                }
+
+                .subscribe-form button {
+                    background-color: #1d72b8;
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .subscribe-form button:hover {
+                    background-color: #155a8a;
+                }
             </style>
-            
+
             <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-6 border border-gray-300">
                 <div class="mb-4">
                     <span class="bg-blue-500 text-white text-sm font-semibold py-1 px-3 rounded-full">
@@ -64,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col items-center justify-center text-center">
                 <img
                     class="w-48 mr-6 mb-6"
@@ -92,8 +105,17 @@
                     </div>
                 </div>
 
+                {{-- Subscription Form --}}
+                <div class="subscribe-form">
+                    <form action="{{ route('job.alerts.subscribe') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="keyword" value="{{ $keyword ?? '' }}">
+                        <button type="submit" class="btn btn-primary">Subscribe to Job Alerts</button>
+                    </form>
+                </div>
+
                 {{-- Contact and Website Section --}}
-                <div class="w-full flex flex-col space-y-4">
+                <div class="w-full flex flex-col space-y-4 mt-6">
                     <a
                         href="mailto:{{ $listing->email }}"
                         class="block w-full bg-laravel text-white py-2 px-4 rounded-xl hover:opacity-80"
@@ -117,14 +139,13 @@
             <i class="i fa-solid fa-pencil mr-1"></i>Edit
             </a> --}}
 
-            {{-- delete from --}}
+            {{-- delete form --}}
             {{-- <form method="POST" action="/listings/{{$listing->id}}">
             @csrf
             @method('DELETE')
-            <button class="text-red-500"><i class="fa-solid fa-trash mr-1"></i>Delete</button> --}}
-            {{-- <buttton class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</buttton> --}}
+            <button class="text-red-500"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+            {{-- <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button> --}}
             {{-- </form>
         </x-card> --}}
     </div>
-    
 </x-layout>

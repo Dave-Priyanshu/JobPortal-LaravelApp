@@ -42,8 +42,6 @@
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg ">
                 @auth
-                    
-                
                 <li>
                     <span class="font-bold uppercase">
                         Welcome {{auth()->user()->name}}
@@ -59,7 +57,9 @@
                     <button type="submit">
                         <i class="fa-solid fa-door-closed"></i> Logout
                     </button>
+                    
                 </form>
+               
                 </li>
 
                 @else
@@ -105,10 +105,12 @@ window.addEventListener("scroll", function() {
         class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
         >Post Job</a
     >
+   
+    
     <div class="absolute bottom-3 left-10 flex space-x-4 text-2xl">
-        <a href="https://github.com/Dave-Priyanshu"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:priyanshutest2001@gmail.com"><i class="fa-regular fa-envelope"></i></i></a>
+        <a href="javascript:void(0)"><i class="fa-brands fa-github"></i></a>
+        <a href="javascript:void(0)"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="javascript:void(0)"><i class="fa-regular fa-envelope"></i></i></a>
     </div>
     
     

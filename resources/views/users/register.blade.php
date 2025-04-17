@@ -1,5 +1,5 @@
 <x-layout>
-    <x-card class="bg-gray-200 p-10 max-w-lg mx-auto mt-24">
+    <x-card class="bg-gray-200 p-10 max-w-lg mx-auto mt-10">
      <header class="text-center">
          <h2 class="text-2xl font-bold uppercase mb-1">
              Register
@@ -112,6 +112,10 @@
                  Already have an account?
                  <a href="/login" class="text-laravel hover:text-red-700 transition duration-300">Login</a>
              </p>
+             <p>
+                Back to:
+                <a href="/" class="text-laravel hover:text-red-700 transition duration-300">Home</a>
+            </p>
          </div>
      </form>
     </x-card>

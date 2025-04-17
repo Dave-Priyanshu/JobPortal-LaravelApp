@@ -20,6 +20,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_super_admin',
+        'account_status',
+
     ];
 
     /**
@@ -42,6 +45,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_super_admin'    => 'boolean',
+            'account_status'    => 'string',
         ];
     }
 
@@ -49,6 +54,18 @@ class User extends Authenticatable
     public function listings(){
         return $this->hasMany(Listing::class,'user_id');
     }
-    
 
+    //job alerts
+    public function jobAlerts()
+    {
+        return $this->hasMany(JobAlert::class);
+    }
+    public function isSuperAdmin(): bool
+    {
+        return $this->is_super_admin;
+    }
+      public function getRoleAttribute(): string
+    {
+        return $this->is_super_admin ? 'super_admin' : 'user';
+    }
 }

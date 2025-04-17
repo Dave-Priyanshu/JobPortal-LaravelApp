@@ -32,9 +32,50 @@ class UserController extends Controller
         //login
         auth()->login($user);
 
-        return redirect('/')->with('message','User created and logged in');
+        return redirect('jobs')->with('message','User created and logged in');
     }
 
+
+    //show login form
+    public function login(){
+        return view('/users.login');
+    }
+
+    // authenticate user
+    public function authenticate(Request $request)
+    {
+        $formFields = $request->validate([
+            'email'    => ['required','email'],
+            'password' => ['required'],
+        ]);
+
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            // Check if account is locked
+            if (auth()->user()->account_status === 'locked') {
+                auth()->logout();
+
+                return back()
+                    ->withErrors(['email' => 'Your account is currently locked. Please contact support.'])
+                    ->onlyInput('email');
+            }
+
+            // If superadmin, redirect to dashboard
+            if (auth()->user()->isSuperAdmin()) {
+                return redirect()->route('sadmin.dashboard')
+                                ->with('message','Welcome Super‑Admin!');
+            }
+
+            // Regular user redirect
+            return redirect()->route('jobs')
+                            ->with('message','You are now logged in');
+        }
+
+        return back()
+            ->withErrors(['email' => 'Invalid Credentials'])
+            ->onlyInput('email');
+    }
 
     //logout
     public function logout(Request $request){
@@ -45,26 +86,5 @@ class UserController extends Controller
 
         return redirect('/')->with('message','You have been logged out');
     }
-
-    //show login form
-    public function login(){
-        return view('/users.login');
-    }
-
-    // authenticate user
-    public function authenticate(Request $request){
-        $formFields = $request->validate([
-            'email'=>['required','email'],
-            'password'=>'required'
-        ]);
-
-        if(auth()->attempt($formFields)){
-            $request->session()->regenerate();
-
-            return redirect('/')->with('message','You are now logged in');
-        }
-        else{
-            return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email ');
-        }
-    }
+    
 }
