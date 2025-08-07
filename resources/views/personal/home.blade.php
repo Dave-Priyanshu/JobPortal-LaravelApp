@@ -123,17 +123,14 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-facebook-f"></i> <!-- Facebook Icon -->
+                        <a href="https://github.com/Dave-Priyanshu" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-twitter"></i> <!-- Twitter Icon -->
+                        <a href="https://www.linkedin.com/in/priyanshu-dave2001/" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i> 
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-linkedin-in"></i> <!-- LinkedIn Icon -->
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                        <a href="mailto:davepriyanshu2001@gmail.com" class="text-gray-400 hover:text-white">
+                            <i class="fa fa-envelope"></i> <!-- Instagram Icon -->
                         </a>
                     </div>
                 </div>

@@ -68,8 +68,7 @@ class UserController extends Controller
             }
 
             // Regular user redirect
-            return redirect()->route('jobs')
-                            ->with('message','You are now logged in');
+            return redirect()->route('jobs.index')->with('message','You are now logged in');
         }
 
         return back()
